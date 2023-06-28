@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Card from './Card';
+import styles from './Cards.module.css'
 
 export default function Cards(props) {
   const { characters } = props;
@@ -11,7 +12,7 @@ export default function Cards(props) {
   };
 
   return (
-    <div>
+    <div className={styles.cards}>
       {visibleCards.map((character) => (
         <Card
           key={character.id}
