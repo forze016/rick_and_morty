@@ -12,6 +12,7 @@ export default function Card(props) {
         
           <p className={styles.ptext}>Status: {status}</p>
           <p className={styles.ptext}>Gender: {gender}</p>
+          <p className={styles.ptext}>Species: {species}</p>
           <p className={styles.ptext}>Origin: {origin.name}</p>
         <button className="close-btn" onClick={onClose}>
           X
