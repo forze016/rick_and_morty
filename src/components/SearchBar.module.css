@@ -3,10 +3,10 @@
 
 .search {
   display: flex;
+  align-items:center;
 }
 
-.searchTerm {
-  width: 100%;
+ .searchTerm {
   border: 3px solid #00B4CC;
   border-right: none; 
   padding: 5px;
@@ -14,7 +14,7 @@
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
-}
+} 
 
 .searchTerm:focus{
   color: #00B4CC;
@@ -23,7 +23,7 @@
 .searchButton {
   width: 100px;
   height: 36px;
-  border: 1px solid #00B4CC;
+  border: 1px solid #000000;
   background: #00B4CC;
   text-align: center;
   color: #fff;
@@ -36,5 +36,5 @@
  .wrap{
   width: 30%;
   position: flex;
-  margin-left: 20rem
-} 
+  justify-content: center;
+}  

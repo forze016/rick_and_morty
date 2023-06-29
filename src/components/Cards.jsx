@@ -1,19 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from './Card';
-import styles from './Cards.module.css'
+import styles from './Cards.module.css';
 
 export default function Cards(props) {
-  const { characters } = props;
-  const [visibleCards, setVisibleCards] = useState(characters);
-
-  const handleCardClose = (id) => {
-    const updatedCards = visibleCards.filter((card) => card.id !== id);
-    setVisibleCards(updatedCards);
-  };
+  const { characters, onClose } = props;
 
   return (
     <div className={styles.cards}>
-      {visibleCards.map((character) => (
+      {characters.map((character) => (
         <Card
           key={character.id}
           name={character.name}
@@ -22,7 +16,8 @@ export default function Cards(props) {
           gender={character.gender}
           origin={character.origin}
           image={character.image}
-          onClose={() => handleCardClose(character.id)}
+          onClose={onClose}
+          id = {character.id}
         />
       ))}
     </div>
