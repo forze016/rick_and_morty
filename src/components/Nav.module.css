@@ -1,21 +1,40 @@
-.nav{
+/* Nav.module.css */
+.nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content:center;
-    align-items: center;
-    width: 100%;
-    background-color: #000000;
-    padding:.8em 0 ;
-}
-.nav > button{
-    width: 100px;
-    height: 36px;
-    border: 1px solid #000000;
-    background: #00B4CC;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
+    padding: 10px;
+    background: rgb(51, 142, 139);
+    background: radial-gradient(
+      circle,
+      rgba(51, 142, 139, 1) 0%,
+      rgba(19, 20, 19, 1) 100%
+    );
+  }
+  
+  .logo {
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu a {
+    margin-right: 10px;
+    background-color: #333;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
     cursor: pointer;
-    font-size: 20px;
-    margin-left: 7.5rem;
-}
+  }
+  

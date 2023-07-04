@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .erroMessage {
+    text-align: center;
+  }
+  
+  .errorCode {
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .errorDescription {
+    font-size: 1.5rem;
+  }
+  
+  .errorLink {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .errorLink:hover {
+    text-decoration: underline;
+  }
+  
