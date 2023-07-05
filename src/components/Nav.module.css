@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 82rem;
     padding: 10px;
     background: rgb(51, 142, 139);
     background: radial-gradient(
@@ -19,6 +20,31 @@
     margin-right: 1rem;
   }
   
+  .logoColor{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background-image: linear-gradient(to right, rgba(51, 142, 139, 1), #000000);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: wave-animation 4s linear infinite; 
+}
+
+@keyframes wave-animation {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%; 
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
   .menu {
     display: flex;
   }

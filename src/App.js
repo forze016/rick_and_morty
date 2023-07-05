@@ -7,6 +7,7 @@ import Cards from './components/Cards';
 import About from './components/About';
 import Error404 from './components/Error404';
 import Form from './components/Form';
+import Favorites from './components/Favorites';
 import axios from 'axios';
 import { validate } from './validation';
 
@@ -82,6 +83,7 @@ function App() {
         <Route path="/" element={<Form onLogin={handleLogin} />} />
         <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
         <Route path="/about" element={<About />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
