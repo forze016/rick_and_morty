@@ -10,7 +10,7 @@ const Nav = ({ onSearch, addRandomCharacter }) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
-        <Link className={styles.logoColor} to="/">RIck And Morfy</Link>
+        <Link className={styles.logoColor} to="/">Rick and Morty</Link>
       </div>
 
       <div className={styles.menu}>
