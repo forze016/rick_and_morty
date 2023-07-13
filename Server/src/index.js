@@ -9,7 +9,7 @@ en formato JSON.
 
 //Se importa el módulo "http"y el archivo "data.js" que contiene los datos de los personajes.
 const http = require("http");
-const data = require("./utils/data.js");
+const getCharById = require("./controllers/getCharById");
 
 
 /*Se crea un servidor HTTP utilizando el método "createServer" del módulo "http".
@@ -23,12 +23,10 @@ se definen las acciones a realizar. */
     if (req.url.includes("/rickandmorty/character")) {
 //Si la URL incluye "/rickandmorty/character", se extrae el ID del personaje de la URL utilizando el método "split" y "pop".    
         const id = req.url.split("/").pop();
-//Se busca en el archivo de datos el personaje que tenga el mismo ID utilizando el método "find" y se asigna a la variable "character".     
-        const character = data.find((character) => character.id === parseInt(id));
-//Se establece el encabezado "Content-Type" en la respuesta para indicar que el contenido es de tipo JSON.     
-        res.setHeader("Content-Type", "application/json");
-//Se envía la respuesta con el personaje encontrado en formato JSON utilizando el método "end" y "JSON.stringify".         
-        res.end(JSON.stringify(character));
+//llamamos a la función  getCharById  pasando como argumentos el parámetro  res  y el ID del personaje. De esta manera,
+//ejecutaremos el controlador y obtendremos la respuesta correspondiente según el ID del personaje.        
+        getCharById(res, id);
+
   }
 });
 
