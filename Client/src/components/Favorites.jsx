@@ -8,7 +8,7 @@ function Favorites(props) {
   const { myFavorites } = props;
   const dispatch = useDispatch();
   const [aux, setAux] = useState(false);
-
+  console.log(myFavorites)
   const handleOrder = (e) => {
     dispatch(orderCards(e.target.value));
     setAux(!aux);
@@ -21,7 +21,6 @@ function Favorites(props) {
   };
 
   useEffect(() => {
-    // Aquí puedes realizar alguna acción adicional al cargar los favoritos
   }, []);
 
   return (
@@ -50,8 +49,16 @@ function Favorites(props) {
       </div>
       </div>
       <div className={styles.pers}>
-      {myFavorites.map((character) => (
-        <Card key={character.id} {...character} />
+      {myFavorites?.map((character) => (
+        <Card key={character.id}
+        name={character.name}
+        status={character.status}
+        species={character.species}
+        gender={character.gender}
+        origin={character.origin}
+        image={character.image}
+        onClose={props.onClose}
+        id = {character.id} />
       ))}
       </div>
     </div>
@@ -64,4 +71,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Favorites);
+export default connect(mapStateToProps, null)(Favorites);
