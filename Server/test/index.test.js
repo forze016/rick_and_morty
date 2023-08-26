@@ -25,9 +25,8 @@ describe("GET /rickandmorty/character/:id", () => {
 
 describe("GET /rickandmorty/login", () => {
     it("Responde con access: true si se envía la información de login correcta", async () => {
-      const response = await agent.get('/rickandmorty/login')
-        .query({ email: 'example@example.com', password: 'password123' });
-      expect(response.body).toEqual({ access: true });
+      const response = await agent.get("/rickandmorty/login/?email=facundonadaya@gmail.com&password=123456789")
+      expect({access: true}).toEqual( response.body );
     });
   
     it("Responde con access: false si se envía la información de login incorrecta", async () => {
@@ -95,7 +94,7 @@ describe("GET /rickandmorty/login", () => {
         origin: "Earth",
         image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
       };
-      const character2 = {
+       const character2 = {
         id: 2,
         name: "Morty Smith",
         species: "Human",
@@ -104,12 +103,12 @@ describe("GET /rickandmorty/login", () => {
         origin: "Earth",
         image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
       };
-      await agent.post('/rickandmorty/fav')
+       await agent.post('/rickandmorty/fav')
         .send(character1);
-      await agent.post('/rickandmorty/fav')
+       await agent.post('/rickandmorty/fav')
         .send(character2);
-      const response = await agent.delete('/rickandmorty/fav/3');
-      expect(response.body).toEqual([character1, character2]);
+       const response = await agent.delete('/rickandmorty/fav/3');
+       expect(response.body).toEqual([character1, character2]);
     });
     it("Si se envía un ID válido, se elimina correctamente al personaje", async () => {
       const character1 = {
